@@ -1,6 +1,6 @@
 use image::Rgba;
 
-
+#[derive(Clone, Copy)]
 pub enum Cell{
     Wall,
     Path,
@@ -40,6 +40,10 @@ impl std::fmt::Display for MazeError {
             Self::TooManyEndpoints => writeln!(f, "There are too many endpoints (start and end)."),
         }
     }
+}
+
+impl Cell{
+
 }
 
 impl std::error::Error for MazeError {}
